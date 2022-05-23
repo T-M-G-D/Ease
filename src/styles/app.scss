@@ -56,20 +56,20 @@ body {
 
 .menu__icon--active {
     .icon {
-        fill: var(--color-icon-active);
+        fill: var(--color-icon--active);
     }
     .circle {
-        fill: var(--color-circle-active);
-        stroke: var(--color-icon);
+        fill: var(--color-circle--active);
+        stroke: var(--color-icon--active);
     }
 }
 
 .menu__icon:hover {
     .icon {
-        fill: var(--color-icon-active);
+        fill: var(--color-icon--active);
     }
     .circle {
-        fill: var(--color-circle-active);
+        fill: var(--color-circle--active);
         stroke: var(--color-icon);
     }
 }
@@ -168,9 +168,9 @@ body {
     --color-border: #343434;
     --color-boxColor: #343434;
     --color-circle: #343434;
-    --color-circle-active: #fff;
+    --color-circle--active: #fff;
     --color-icon: #fff;
-    --color-icon-active: #343434;
+    --color-icon--active: #343434;
 }
 
 [data-theme='dark'] {
@@ -187,9 +187,9 @@ body {
     --color-border: #fff;
     --color-boxColor: #fff;
     --color-circle: #fff;
-    --color-circle-active: #343434;
+    --color-circle--active: #343434;
     --color-icon: #343434;
-    --color-icon-active: #fff;
+    --color-icon--active: #fff;
 }
 
 :root {
