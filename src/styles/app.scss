@@ -2,14 +2,11 @@
 @import 'components/type';
 @import '../../node_modules/modern-normalize/modern-normalize';
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&family=Quicksand:wght@300;400;600;700&display=swap');
-//pour récupérer les fonts
-.fonts {
-    font-family: 'Exo 2', sans-serif;
+body {
     font-family: 'Quicksand', sans-serif;
-}
-
-ul {
-    list-style: none;
+    color: #343434;
+    font-size: 20px;
+    line-height: 140%
 }
 
 .header {
@@ -18,29 +15,113 @@ ul {
     padding: 10px 15px 0 15px;
 }
 
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .logo {
     height: 60px;
     width: 60px;
+    fill: #343434;
 }
 
 .menu__liste {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: space-around;
 }
 
 .menu__icon {
     width: 60px;
     height: 60px;
+    margin: 5px;
+}
+
+.menu__icon--active {
+    .icon {
+        fill: #343434;
+        stroke: #343434;
+    }
+    .circle {
+        fill: #fff;
+    }
 }
 
 .menu__icon:hover {
     .icon {
         fill: #343434;
+        stroke: #343434;
     }
     .circle {
         fill: #fff;
     }
+}
+
+.main {
+    max-width: 100vw;
+    margin: 0 7%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 6.5% 1fr;
+}
+
+.title {
+    font-family: 'Exo 2', sans-serif;
+    color: #343434;
+    line-height: 140%;
+}
+
+.title--main {
+    font-size: 41px;
+    grid-column-start: 1;
+    margin-bottom: 10px;
+}
+
+.text--secondary {
+    font-size: 35px;
+}
+
+.textBox {
+    border: solid 2px #343434;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    padding: 28px;
+    position: relative;
+}
+
+.colorBox {
+    height: 28px;
+    width: 56px;
+    background: #343434;
+    position: absolute;
+    top: -14px;
+    right: -10px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    .footer__text {
+        text-align: left;
+    }
+}
+
+//reset
+ul {
+    list-style: none;
+}
+
+a {
+    color: #343434;
+}
+
+a:hover {
+    background-color: #343434;
+    color: #fff;
 }
