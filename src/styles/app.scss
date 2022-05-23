@@ -3,8 +3,9 @@
 @import '../../node_modules/modern-normalize/modern-normalize';
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&family=Quicksand:wght@300;400;600;700&display=swap');
 body {
+    background: var(--color-bg);
     font-family: 'Quicksand', sans-serif;
-    color: #343434;
+    color: var(--color-text);
     font-size: 20px;
     line-height: 140%
 }
@@ -21,13 +22,16 @@ body {
     align-items: center;
 }
 
+.menu__links:hover {
+    background: none;
+}
+
 .logo {
     height: 60px;
     width: 60px;
-    fill: #343434;
 }
 
-.menu__liste {
+.menu__list {
     margin: 0;
     padding: 0;
     display: flex;
@@ -40,23 +44,33 @@ body {
     margin: 5px;
 }
 
-.menu__icon--active {
+.menu__icon {
     .icon {
-        fill: #343434;
-        stroke: #343434;
+        fill: var(--color-icon);
     }
     .circle {
-        fill: #fff;
+        fill: var(--color-circle);
+        stroke: var(--color-icon);
+    }
+}
+
+.menu__icon--active {
+    .icon {
+        fill: var(--color-icon-active);
+    }
+    .circle {
+        fill: var(--color-circle-active);
+        stroke: var(--color-icon);
     }
 }
 
 .menu__icon:hover {
     .icon {
-        fill: #343434;
-        stroke: #343434;
+        fill: var(--color-icon-active);
     }
     .circle {
-        fill: #fff;
+        fill: var(--color-circle-active);
+        stroke: var(--color-icon);
     }
 }
 
@@ -72,7 +86,7 @@ body {
 
 .title {
     font-family: 'Exo 2', sans-serif;
-    color: #343434;
+    color: var(--color-text);
     line-height: 140%;
 }
 
@@ -87,7 +101,7 @@ body {
 }
 
 .textBox {
-    border: solid 2px #343434;
+    border: solid 2px var(--color-border);
     grid-column-start: 2;
     grid-row-start: 2;
     padding: 28px;
@@ -97,31 +111,116 @@ body {
 .colorBox {
     height: 28px;
     width: 56px;
-    background: #343434;
     position: absolute;
     top: -14px;
     right: -10px;
 }
 
+.colorBox--bk {
+    background: var(--color-boxColor);
+}
+
+.colorBox--pink {
+    background: #EACFEC;
+}
+
+.colorBox--gold {
+    background: #CBAF77;
+}
+
 .footer {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
+    background: var(--color-bg);
+    .footer__list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 15px;
+    }
     .footer__text {
         text-align: left;
+    }
+    .darkMode,
+    .lightMode {
+        cursor: pointer;
+        text-decoration: underline;
+        position: relative;
+        right: 20px;
+    }
+    .darkMode:hover,
+    .lightMode:hover {
+        background: var(--color-links--hoverBg);
+        color: var(--color-links--hoverColor);
     }
 }
 
 //reset
+[data-theme='light'] {
+    --color-bg: #fff;
+    --color-bg-offset: #343434;
+    --color-text: #343434;
+    --color-text-offset: #fff;
+    --color-links: #343434;
+    --color-links--hoverBg: #343434;
+    --color-links--hoverColor: #fff;
+    --color-links--visited: #9800b3;
+    --darkMode_display: inline;
+    --lightMode_display: none;
+    --color-border: #343434;
+    --color-boxColor: #343434;
+    --color-circle: #343434;
+    --color-circle-active: #fff;
+    --color-icon: #fff;
+    --color-icon-active: #343434;
+}
+
+[data-theme='dark'] {
+    --color-bg: #343434;
+    --color-bg-offset: #fff;
+    --color-text: #fff;
+    --color-text-offset: #343434;
+    --color-links: #fff;
+    --color-links--hoverBg: #fff;
+    --color-links--hoverColor: #343434;
+    --color-links--visited: #eebb54;
+    --darkMode_display: none;
+    --lightMode_display: inline;
+    --color-border: #fff;
+    --color-boxColor: #fff;
+    --color-circle: #fff;
+    --color-circle-active: #343434;
+    --color-icon: #343434;
+    --color-icon-active: #fff;
+}
+
+:root {
+    --color-bg: #fff;
+    --color-bg-offset: #343434;
+    --color-text: #343434;
+    --color-text-offset: #fff;
+    --darkMode_display: inline;
+    --lightMode_display: none;
+}
+
+@media(prefers-color-scheme: dark) {
+     :root {
+        --color-bg: #343434;
+        --color-bg-offset: #fff;
+        --color-text: #fff;
+        --color-text-offset: #343434;
+        --darkMode_display: none;
+        --lightMode_display: inline;
+    }
+}
+
 ul {
     list-style: none;
 }
 
 a {
-    color: #343434;
+    color: var(--color-links);
 }
 
 a:hover {
-    background-color: #343434;
-    color: #fff;
+    background-color: var(--color-links--hoverBg);
+    color: var(--color-links--hoverColor);
 }
