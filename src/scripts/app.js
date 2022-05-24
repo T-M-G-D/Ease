@@ -1,4 +1,6 @@
 "use strict"
+import { gsap } from "gsap";
+
 // Date copyright
 
 var date = new Date();
@@ -19,9 +21,11 @@ darkTheme && lightTheme.addEventListener("click", function() {
     if (document.body.dataset.theme === "dark") {
         light();
         localStorage.setItem("theme", "light");
+
     } else {
         dark();
         localStorage.setItem("theme", "dark");
+
     }
 });
 
@@ -39,8 +43,18 @@ if ((!theme && userDark) || (theme === "dark")) {
 //function pour le dark
 function dark() {
     document.body.setAttribute("data-theme", "dark");
+    document.body.classList.add("dMode");
+    document.body.classList.remove("lMode");
+    gsap.fromTo(
+        ".dMode", { opacity: 0 }, { duration: 1, opacity: 1 }
+    );
 }
 //function pour le light
 function light() {
     document.body.setAttribute("data-theme", "light");
+    document.body.classList.add("lMode");
+    document.body.classList.remove("dMode");
+    gsap.fromTo(
+        ".lMode", { opacity: 0 }, { duration: 1, opacity: 1 }
+    );
 }
