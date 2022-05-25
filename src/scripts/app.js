@@ -58,3 +58,36 @@ function light() {
         ".lMode", { opacity: 0 }, { duration: 1, opacity: 1 }
     );
 }
+
+//slider
+const slider__img = document.getElementsByClassName("slider__img");
+const next = document.querySelector(".next");
+const previous = document.querySelector(".previous");
+
+let imgActive = 0;
+
+let nbrImg = slider__img.length;
+
+function changeImg() {
+    for (let i = 0; i < nbrImg; i++) {
+        slider__img[i].classList.remove("slider__img--active");
+    }
+}
+
+next.addEventListener("click", function() {
+    imgActive++;
+    if (imgActive >= nbrImg) {
+        imgActive = 0;
+    }
+    changeImg();
+    slider__img[imgActive].classList.add("slider__img--active");
+})
+
+previous.addEventListener("click", function() {
+    imgActive--;
+    if (imgActive < 0) {
+        imgActive = nbrImg - 1;
+    }
+    changeImg();
+    slider__img[imgActive].classList.add("slider__img--active");
+})
