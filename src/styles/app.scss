@@ -490,6 +490,15 @@ a:hover {
         height: 30px;
         width: 30px;
     }
+    .wheel {
+        display: inline;
+        grid-column: 1 / span 2;
+        position: fixed;
+        z-index: -1;
+        height: 600px;
+        width: 600px;
+        transform: translate(386px, 4px);
+    }
 }
 
 //Desktop
@@ -498,6 +507,7 @@ a:hover {
         grid-template-columns: 4% 1fr 1fr;
         column-gap: 30px;
         align-items: center;
+        justify-content: center;
     }
     .textBox {
         grid-column: 2;
@@ -519,7 +529,7 @@ a:hover {
         grid-column: 3;
         grid-row: 2;
         .visual__box {
-            max-width: 35vw;
+            max-width: auto;
             height: 51vh;
         }
         .visual__pic {
@@ -527,6 +537,7 @@ a:hover {
         }
         .visual__box--slider {
             height: 28vh;
+            max-width: 640px;
         }
         .visual__box--gif {
             width: auto;
@@ -568,6 +579,6 @@ a:hover {
         width: 25px;
     }
     .wheel {
-        transform: translate(535px, -55px);
+        transform: translate(555px, -288px) scale(1.5);
     }
 }
