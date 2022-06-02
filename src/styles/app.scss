@@ -221,6 +221,11 @@ body {
     width: 100%;
 }
 
+.commercial__video {
+    width: 80vw;
+    height: 40vw;
+}
+
 .colorBox--bk {
     background: var(--color-boxColor);
 }
@@ -590,6 +595,10 @@ a:hover {
     }
     .visual--rowDecal4 {
         grid-row: 6;
+    }
+    .commercial__video {
+        width: 50vw;
+        height: 25vw;
     }
     .add {
         grid-column: 3 / span 4;
